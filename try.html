@@ -1,0 +1,20 @@
+<html>
+    <body onload="er();">
+        <script>
+        function er() {
+            alert("IN");
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+
+        function showPosition(position) {
+         alert("Latitude: " + position.coords.latitude + "Longitude: " + position.coords.longitude); 
+        }
+    </script>
+    
+    </body>
+    
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
+	<title>SWATCH BAHARAT</title>
+	<!-- css -->
+	<link href="css/base.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+
+	<!-- css for doc -->
+	<link href="css/project.min.css" rel="stylesheet">
+    
+    <!--pubnub-->
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.19.0.min.js"></script>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- js -->
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="js/base.min.js"></script>
+
+	<!-- js for doc -->
+	<script src="js/project.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style type="">
+		.date{
+		    width: 100%;
+		    padding: 12px 20px;
+		    margin: 8px 0;
+		    box-sizing: border-box;
+		    border: none;
+		    border-bottom: 2px solid #3f51b9;
+		}
+		#msg{
+			font-weight: 500;
+			margin-left: 1em;
+		}
+	</style>
+	<style type="">
+		#title
+		{
+			font-weight: 900;
+			text-transform: uppercase;
+			text-align: justify;
+			/*letter-spacing: 1px;*/
+			text-shadow: 3px 2px white;
+			font-family: "Times New Roman", Times, serif;
+			text-align: center;
+		}
+		.inputfile, .flabel {
+    		font-size: 1.25em;
+    		font-weight: 500;
+    		display: inline-block;
+		}
+		.red{
+			color: red;
+		}
+	</style>
+	 
+	<!-- css -->
+	<link href="css/base.min.css" rel="stylesheet">
+	<!-- css for doc -->
+	<link href="css/project.min.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body class="page-brand" style="padding-bottom: 0">
+	<header class="header header-transparent header-waterfall">
+		<ul class="nav nav-list pull-left">
+			<li>
+				<a data-toggle="menu" href="#doc_menu">
+<!--					<span class="icon icon-lg">menu</span>-->
+				</a>
+			</li>
+		</ul>
+		<a class="header-logo margin-left-no" href="#">CLEAN</a>
+		<ul class="nav nav-list pull-right">
+			<li class="dropdown margin-right">
+				<a class="dropdown-toggle padding-left-no padding-right-no" data-toggle="dropdown">
+					<span class="access-hide"></span>
+					<!--<span class="avatar avatar-sm"><img alt="alt text for John Smith avatar" src="logo.png"></span>-->
+				</a>
+			</li>
+		</ul>
+	</header>
+<!--	<nav aria-hidden="true" class="menu" id="doc_menu" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-content">
+				<a class="menu-logo" href="#">Clean</a>
+					<ul class="nav">
+						<li>
+							<a class="collaosed waves-attach" data-toggle="collapse" href="#doc_menu_components">Reports</a>
+								<UL id="doc_menu_components">
+								
+									<a class="waves-attach" href="#">Make Reports</a>
+								
+									<a class="waves-attach" href="#">View Reports</a>
+
+								</UL>
+							
+								<a class="collaosed waves-attach" data-toggle="collapse" href="#doc_menu_component">Scheduled Meetings</a>
+
+								<UL id="doc_menu_component">
+
+									<a class="waves-attach" href="#">ABOUT MEETING 1</a>
+							
+									<a class="waves-attach" href="#">ABOUT MEETING 2</a>
+
+									<a class="waves-attach" href="#">ABOUT MEETING 3</a>
+
+								</UL>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</nav>-->
+
+	<main class="content" >
+		<div class="content-heading" >
+			<div class="container" >
+				<div >
+					<div>
+						<h1 class="heading"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;COMPLAINT</h1>
+							<div id="viewreport" >
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" >
+			<div class="row">
+				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
+					<section class="content-inner margin-top-no">
+						<div class="card" style="background-color:">
+							<div class="card-main">
+								<div class="card-inner">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-10 col-md-push-1">
+												<b id="title"></b>
+												<form method="get">
+
+													<br><br>
+													<label class="flabel">LOCATION <span class="red">*</span></label><br><br>
+
+													<textarea rows="4" cols="50" id="desc"></textarea>
+                                                    <br><br>
+                                                    
+                                                    <br><br>
+													<label class="flabel">PINCODE <span class="red">*</span></label><br>
+													<input type="number" name="pin" id="pin" required class="date inputfile">
+													<br><br>
+
+													<!--<br><br>
+													<label class="flabel">IMAGE <span class="red">*</span></label><br>
+													<input type="file" name="image" accept="image/*" id="ipf" required class="date inputfile">
+													<br><br>-->
+
+													<br><br>
+													<label class="flabel">DESCRIPTION</label><br>
+													<input id="ipm" class="date" type="text">
+													<br><br>
+
+													<a href="#" style="text-decoration:none;">
+
+														<button class="btn btn-block btn-brand waves-attach waves-light" onclick="check();" type="button">
+															SUBMIT
+														</button><br>
+
+													</a>
+
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+			
+					</section>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script type="">
+        function check() {
+           var no          = document.getElementById("ipm").value;
+           var desc        = document.getElementById("desc").value;
+            //var img       = document.getElementById("ipf").value;
+            var pin     = document.getElementById("pin").value;
+            //alert(img);
+            if (no==null || no=="", desc==null || desc==""){
+                alert("Please Fill All Required Field");
+            }
+            else{
+            $.post(
+                "https://verve-vit.com/clipboard.php",
+                { 
+                    location    : no,
+                    description : desc,
+                    //img         : img
+                    pin : pin
+                },
+                function(data, status) {
+                    alert("YOUR COMPLAINT HAS BEEN REGISTERED");
+                    window.location.href = "index.html";
+                } 
+               ); 
+            }
+        }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick="check();">AAA</button>
+</body>
+<script type="text/javascript">
+	function check(){
+		alert("CHECK");
+FingerprintAuth.isAvailable(isAvailableSuccess, isAvailableError);
+function isAvailableSuccess(result) {
+	alert("isAvailableSuccess");
+    console.log("FingerprintAuth available: " + JSON.stringify(result));
+    if (result.isAvailable) {
+        var encryptConfig = {}; // See config object for required parameters
+        FingerprintAuth.encrypt(encryptConfig, encryptSuccessCallback, encryptErrorCallback);
+    }
+} 
+function isAvailableError(message) {
+	alert("isAvailableError");
+    alert("isAvailableError(): " + message);
+}}
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+</html>

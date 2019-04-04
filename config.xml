@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.es"
+        versionCode = "1" 
+        version     = "1.0.0" >
+ 
+    <!-- versionCode is Android only -->
+    <!-- version is in major.minor.patch format --> 
+
+    <name>Clean</name>
+    <preference name='phonegap-version' value='cli-8.1.1' />
+ 
+    <access origin="*" />
+ 
+    <author href=" " email=" ">
+        AAN
+    </author>
+    <plugin name ="cordova-plugin-whitelist" source="npm"/>
+    <plugin name ="cordova-plugin-inappbrowser" source="npm"/>        
+</widget>    
